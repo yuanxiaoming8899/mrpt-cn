@@ -1,101 +1,158 @@
-
-<h1 align="center">The MRPT project</h1>
-
-<a href="https://github.com/MRPT/mrpt/actions/workflows/build-linux.yml"><img src="https://github.com/MRPT/mrpt/actions/workflows/build-linux.yml/badge.svg" /></a>
-<a href="https://github.com/MRPT/mrpt/actions/workflows/build-macos.yml"><img src="https://github.com/MRPT/mrpt/actions/workflows/build-macos.yml/badge.svg" /></a>
-<a href="https://github.com/MRPT/mrpt/actions/workflows/build-windows.yml"><img src="https://github.com/MRPT/mrpt/actions/workflows/build-windows.yml/badge.svg" /></a>
-<a href="https://ci.appveyor.com/project/jlblancoc/mrpt" alt="AppVeyor:msvc"><img src="https://ci.appveyor.com/api/projects/status/yjs4lpj02f6a1ylg/branch/develop?svg=true" /></a> 
-<a href="https://codecov.io/gh/MRPT/mrpt" alt="codecov"><img src="https://codecov.io/gh/MRPT/mrpt/branch/develop/graph/badge.svg" /></a>
-[![CI Check clang-format](https://github.com/MRPT/mrpt/actions/workflows/check-clang-format.yml/badge.svg)](https://github.com/MRPT/mrpt/actions/workflows/check-clang-format.yml)
-
-<a href="https://github.com/MRPT/mrpt/releases" alt="Releases"><img src="https://img.shields.io/github/release/MRPT/mrpt.svg" /></a>
-<a href='https://github.com/MRPT/mrpt/releases/tag/Windows-nightly-builds'><img src='https://img.shields.io/badge/Windows-Installer-orange?logo=Windows'></a>
-<a href="https://zenodo.org/doi/10.5281/zenodo.10595286"><img src="https://zenodo.org/badge/13708826.svg" alt="DOI"></a>
-
-## 1. Introduction
-<img align="right" src="https://mrpt.github.io/imgs/mrpt-videos-mix2.gif">
-
-Mobile Robot Programming Toolkit (MRPT) provides C++ libraries aimed at researchers
-in mobile robotics and computer vision. Libraries include [SLAM solutions](https://www.mrpt.org/List_of_SLAM_algorithms), [2D and 3D spatial transformations](https://www.mrpt.org/tutorials/programming/maths-and-geometry/2d_3d_geometry/), [SE(2)/SE(3) Lie groups](https://ingmec.ual.es/~jlblanco/papers/jlblanco2010geometry3D_techrep.pdf),
-[probability density functions (pdfs)](https://docs.mrpt.org/reference/latest/class_mrpt_math_CProbabilityDensityFunction.html) over points, landmarks, poses and maps,
-Bayesian inference ([Kalman filters](https://www.mrpt.org/Kalman_Filters), [particle filters](https://www.mrpt.org/tutorials/programming/statistics-and-bayes-filtering/particle_filters/)), [image processing](https://www.mrpt.org/tutorials/programming/images-image-processing-camera-models/), [obstacle avoidance](https://www.mrpt.org/Obstacle_avoidance), [etc](https://docs.mrpt.org/reference/latest/modules.html).
-MRPT also provides GUI apps for [camera calibration](https://docs.mrpt.org/reference/latest/app_camera-calib.html), [dataset inspection](https://docs.mrpt.org/reference/latest/app_RawLogViewer.html),
-and [much more](https://docs.mrpt.org/reference/latest/applications.html).
-
-## 2. Resources
-  * Download the latest unstable code with: `git clone https://github.com/MRPT/mrpt.git --recursive`
-  * Ask questions at [stackoverflow](https://stackoverflow.com/search?q=mrpt) (use the tag `mrpt`)
-  * [Main project website](https://www.mrpt.org/), including [sources and Windows installer downloads](https://www.mrpt.org/download-mrpt/)
-  * [C++ API reference](https://docs.mrpt.org/reference/)
-  * [ROS packages](https://docs.mrpt.org/reference/latest/wrappers.html#mrpt-ros-packages)
-  * [Bindings documentation](https://github.com/MRPT/mrpt/wiki) (Python, Matlab)
-  * Source code for [dozens of examples](https://docs.mrpt.org/reference/latest/examples.html)
-  * Example configuration files for  MRPT applications can be found at:
-     [MRPT/share/mrpt/config_files](https://github.com/MRPT/mrpt/tree/master/share/mrpt/config_files)
-  * Some sample datasets are stored in:
-     [MRPT/share/mrpt/datasets](https://github.com/MRPT/mrpt/tree/master/share/mrpt/datasets).
-    A more complete dataset repository is [available online](https://www.mrpt.org/robotics_datasets).
-  * [How to contribute](https://github.com/MRPT/mrpt/blob/master/.github/CONTRIBUTING.md) with your code for new feaures, bug fixes, etc.
-  * MRPT is used in the [MOLA modular SLAM framework](https://github.com/MOLAorg/mola/).
-
-## 3. Install
-
-### 3.1. Ubuntu/Debian
-
-Install simply with `sudo apt install libmrpt-dev mrpt-apps`, but check first what MRPT version exists in your [Ubuntu](https://packages.ubuntu.com/search?keywords=mrpt&searchon=sourcenames) or [Debian](https://qa.debian.org/madison.php?package=mrpt) ([tracker](https://tracker.debian.org/pkg/mrpt)) distribution.
-
-If you want a more recent version, check out [this PPA](https://launchpad.net/~joseluisblancoc/+archive/ubuntu/mrpt) for nightly builds from the `develop` branch, or [this one](https://launchpad.net/~joseluisblancoc/+archive/ubuntu/mrpt-stable) for stable releases.
-
-        sudo add-apt-repository ppa:joseluisblancoc/mrpt   # develop branch
-        #sudo add-apt-repository ppa:joseluisblancoc/mrpt-stable   # master (stable releases) branch
-        sudo apt install libmrpt-dev mrpt-apps
-
-Supported distributions:
-  * Ubuntu 18.04 LTS (Bionic), Ubuntu 20.04 LTS (Focal), or newer.
-
-### 3.2. Build from sources
-
-See [build documentation](https://docs.mrpt.org/reference/latest/compiling.html) ([source](doc/source/compiling.rst)).
-
-### 3.3. Windows precompiled versions
-
-Executables (`.exe`s and `.dll`s) and development libraries (`.h`s and `.lib`s) included:
-
-[Nightly built Windows installer](https://github.com/MRPT/mrpt/releases/tag/Windows-nightly-builds)
-
-### 3.4. As a ROS1/ROS2 package
-
-MRPT is also shipped as a ros1 & ros2 package named `mrpt2`, so it can be installed via: 
-
-```bash
-sudo apt install ros-$ROS_DISTRO-mrpt2
-```
-
-`mrpt2` status in ROS build farms:
-
-| Distro | `develop` branch  | Stable release | Next builds |
-|---|---|---|---|
-| ROS1 Noetic @ u20.04 | [![Build Status](https://build.ros.org/job/Ndev__mrpt2__ubuntu_focal_amd64/badge/icon)](https://build.ros.org/job/Ndev__mrpt2__ubuntu_focal_amd64/) | [![Version](https://img.shields.io/ros/v/noetic/mrpt2)](https://index.ros.org/search/?term=mrpt2) | [![Build Status](https://build.ros.org/job/Nbin_uF64__mrpt2__ubuntu_focal_amd64__binary/badge/icon)](https://build.ros.org/job/Nbin_uF64__mrpt2__ubuntu_focal_amd64__binary/) |
-| ROS2 Humble @ u22.04 | [![Build Status](https://build.ros2.org/job/Hdev__mrpt2__ubuntu_jammy_amd64/badge/icon)](https://build.ros2.org/job/Hdev__mrpt2__ubuntu_jammy_amd64/) | [![Version](https://img.shields.io/ros/v/humble/mrpt2)](https://index.ros.org/search/?term=mrpt2) | [![Build Status](https://build.ros2.org/job/Hbin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/badge/icon)](https://build.ros2.org/job/Hbin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/) | 
-| ROS2 Iron @ u22.04 | [![Build Status](https://build.ros2.org/job/Idev__mrpt2__ubuntu_jammy_amd64/badge/icon)](https://build.ros2.org/job/Idev__mrpt2__ubuntu_jammy_amd64/) | [![Version](https://img.shields.io/ros/v/iron/mrpt2)](https://index.ros.org/search/?term=mrpt2) | [![Build Status](https://build.ros2.org/job/Ibin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/badge/icon)](https://build.ros2.org/job/Ibin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/) | 
-| ROS2 Rolling @ u22.04 | [![Build Status](https://build.ros2.org/job/Rdev__mrpt2__ubuntu_jammy_amd64/badge/icon)](https://build.ros2.org/job/Rdev__mrpt2__ubuntu_jammy_amd64/) |  [![Version](https://img.shields.io/ros/v/rolling/mrpt2)](https://index.ros.org/search/?term=mrpt2) | [![Build Status](https://build.ros2.org/job/Rbin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/badge/icon)](https://build.ros2.org/job/Rbin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/) | 
-
-| EOL Distro | Last release |
-|---|---|
-| ROS1 Melodic @ u18.04 | [![Version](https://img.shields.io/ros/v/melodic/mrpt2)](https://index.ros.org/search/?term=mrpt2) |
-| ROS2 Foxy @ u20.04 | [![Version](https://img.shields.io/ros/v/foxy/mrpt2)](https://index.ros.org/search/?term=mrpt2) |
-
-
-## 4. License
-MRPT is released under the [new BSD license](http://www.mrpt.org/License/).
-
-
-**Contributors**
-
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 align="center" tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MRPT项目</font></font></h1><a id="user-content-the-mrpt-project" class="anchor-element" aria-label="永久链接：MRPT 项目" href="#the-mrpt-project"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://github.com/MRPT/mrpt/actions/workflows/build-linux.yml"><img src="https://github.com/MRPT/mrpt/actions/workflows/build-linux.yml/badge.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/MRPT/mrpt/actions/workflows/build-macos.yml"><img src="https://github.com/MRPT/mrpt/actions/workflows/build-macos.yml/badge.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/MRPT/mrpt/actions/workflows/build-windows.yml"><img src="https://github.com/MRPT/mrpt/actions/workflows/build-windows.yml/badge.svg" style="max-width: 100%;"></a>
+<a href="https://ci.appveyor.com/project/jlblancoc/mrpt" alt="应用程序Veyor：msvc" rel="nofollow"><img src="https://camo.githubusercontent.com/0a164010574fa528497d4ecf39759e04ea8e4fc8da3928ce8a5d1ea4b8ad72b6/68747470733a2f2f63692e6170707665796f722e636f6d2f6170692f70726f6a656374732f7374617475732f796a73346c706a303266366131796c672f6272616e63682f646576656c6f703f7376673d74727565" data-canonical-src="https://ci.appveyor.com/api/projects/status/yjs4lpj02f6a1ylg/branch/develop?svg=true" style="max-width: 100%;"></a>
+<a href="https://codecov.io/gh/MRPT/mrpt" alt="代码科夫" rel="nofollow"><img src="https://camo.githubusercontent.com/586c6465552be008e98c56733f75ce17f6db8f684e507b86cb90ca92279fba3e/68747470733a2f2f636f6465636f762e696f2f67682f4d5250542f6d7270742f6272616e63682f646576656c6f702f67726170682f62616467652e737667" data-canonical-src="https://codecov.io/gh/MRPT/mrpt/branch/develop/graph/badge.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/MRPT/mrpt/actions/workflows/check-clang-format.yml"><img src="https://github.com/MRPT/mrpt/actions/workflows/check-clang-format.yml/badge.svg" alt="CI 检查 clang 格式" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/MRPT/mrpt/releases" alt="发布"><img src="https://camo.githubusercontent.com/bff6ab1a5df20c7c84c58d4f73effbeb1c7c2eb6547863328981c5cd761267ed/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f4d5250542f6d7270742e737667" data-canonical-src="https://img.shields.io/github/release/MRPT/mrpt.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/MRPT/mrpt/releases/tag/Windows-nightly-builds"><img src="https://camo.githubusercontent.com/208b106dac58ed4d46d77aec497a19f199ab51214a51f3102faf8027a7718418/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f57696e646f77732d496e7374616c6c65722d6f72616e67653f6c6f676f3d57696e646f7773" data-canonical-src="https://img.shields.io/badge/Windows-Installer-orange?logo=Windows" style="max-width: 100%;"></a>
+<a href="https://zenodo.org/doi/10.5281/zenodo.10595286" rel="nofollow"><img src="https://camo.githubusercontent.com/d41ed75e7ca132ec38a05bc20e2b48bb283e338e1ef47cd6ccc7a02fd9adbfb6/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f31333730383832362e737667" alt="DOI" data-canonical-src="https://zenodo.org/badge/13708826.svg" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一、简介</font></font></h2><a id="user-content-1-introduction" class="anchor-element" aria-label="永久链接： 1. 简介" href="#1-introduction"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><animated-image data-catalyst="" style="float: right;"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/aaee15b2873db723e65f4a997c1a2320378ef0f1491332ec09a1a112c19ab0d3/68747470733a2f2f6d7270742e6769746875622e696f2f696d67732f6d7270742d766964656f732d6d6978322e676966" data-target="animated-image.originalLink" hidden=""><img align="right" src="https://camo.githubusercontent.com/aaee15b2873db723e65f4a997c1a2320378ef0f1491332ec09a1a112c19ab0d3/68747470733a2f2f6d7270742e6769746875622e696f2f696d67732f6d7270742d766964656f732d6d6978322e676966" data-canonical-src="https://mrpt.github.io/imgs/mrpt-videos-mix2.gif" style="max-width: 100%;" data-target="animated-image.originalImage" hidden=""></a>
+      <span class="AnimatedImagePlayer" data-target="animated-image.player">
+        <a data-target="animated-image.replacedLink" class="AnimatedImagePlayer-images" href="https://camo.githubusercontent.com/aaee15b2873db723e65f4a997c1a2320378ef0f1491332ec09a1a112c19ab0d3/68747470733a2f2f6d7270742e6769746875622e696f2f696d67732f6d7270742d766964656f732d6d6978322e676966" target="_blank">
+          <span data-target="animated-image.imageContainer">
+            <img data-target="animated-image.replacedImage" alt="" class="AnimatedImagePlayer-animatedImage" src="https://camo.githubusercontent.com/aaee15b2873db723e65f4a997c1a2320378ef0f1491332ec09a1a112c19ab0d3/68747470733a2f2f6d7270742e6769746875622e696f2f696d67732f6d7270742d766964656f732d6d6978322e676966">
+          </span>
+        </a>
+        <button data-target="animated-image.imageButton" class="AnimatedImagePlayer-images" tabindex="-1"></button>
+        <span class="AnimatedImagePlayer-controls" data-target="animated-image.controls">
+          <button data-target="animated-image.playButton" class="AnimatedImagePlayer-button">
+            <svg aria-hidden="true" focusable="false" class="octicon icon-play" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 13.5427V2.45734C4 1.82607 4.69692 1.4435 5.2295 1.78241L13.9394 7.32507C14.4334 7.63943 14.4334 8.36057 13.9394 8.67493L5.2295 14.2176C4.69692 14.5565 4 14.1739 4 13.5427Z">
+            </path></svg>
+            <svg aria-hidden="true" focusable="false" class="octicon icon-pause" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="2" width="3" height="12" rx="1"></rect>
+              <rect x="9" y="2" width="3" height="12" rx="1"></rect>
+            </svg>
+          </button>
+          <a data-target="animated-image.openButton" aria-label="Open in new window" class="AnimatedImagePlayer-button" href="https://camo.githubusercontent.com/aaee15b2873db723e65f4a997c1a2320378ef0f1491332ec09a1a112c19ab0d3/68747470733a2f2f6d7270742e6769746875622e696f2f696d67732f6d7270742d766964656f732d6d6978322e676966" target="_blank">
+            <svg aria-hidden="true" class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+              <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"></path>
+            </svg>
+          </a>
+        </span>
+      </span></animated-image></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">移动机器人编程工具包 (MRPT) 提供针对移动机器人和计算机视觉研究人员的 C++ 库。</font><font style="vertical-align: inherit;">库包括</font></font><a href="https://www.mrpt.org/List_of_SLAM_algorithms" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SLAM 解决方案</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://www.mrpt.org/tutorials/programming/maths-and-geometry/2d_3d_geometry/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2D 和 3D 空间变换</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://ingmec.ual.es/~jlblanco/papers/jlblanco2010geometry3D_techrep.pdf" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SE(2)/SE(3) 李群</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、
+</font><font style="vertical-align: inherit;">点、地标、姿势和地图上的</font></font><a href="https://docs.mrpt.org/reference/latest/class_mrpt_math_CProbabilityDensityFunction.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">概率密度函数 (pdf) 、贝叶斯推理（</font></font></a><font style="vertical-align: inherit;"></font><a href="https://www.mrpt.org/Kalman_Filters" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">卡尔曼滤波器</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://www.mrpt.org/tutorials/programming/statistics-and-bayes-filtering/particle_filters/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">粒子滤波器</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）、</font></font><a href="https://www.mrpt.org/tutorials/programming/images-image-processing-camera-models/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图像处理</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://www.mrpt.org/Obstacle_avoidance" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">避</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">障</font><font style="vertical-align: inherit;">等</font></font><a href="https://docs.mrpt.org/reference/latest/modules.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">_ </font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MRPT 还提供用于</font></font><a href="https://docs.mrpt.org/reference/latest/app_camera-calib.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">相机校准</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://docs.mrpt.org/reference/latest/app_RawLogViewer.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数据集检查</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">等的</font></font><a href="https://docs.mrpt.org/reference/latest/applications.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GUI</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">应用程序。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2. 资源</font></font></h2><a id="user-content-2-resources" class="anchor-element" aria-label="永久链接：2. 资源" href="#2-resources"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载最新的不稳定代码：</font></font><code>git clone https://github.com/MRPT/mrpt.git --recursive</code></li>
+<li><font style="vertical-align: inherit;"></font><a href="https://stackoverflow.com/search?q=mrpt" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在stackoverflow</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上提问</font><font style="vertical-align: inherit;">（使用标签</font></font><code>mrpt</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></li>
+<li><a href="https://www.mrpt.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">主要项目网站</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，包括</font></font><a href="https://www.mrpt.org/download-mrpt/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">源代码和Windows安装程序下载</font></font></a></li>
+<li><a href="https://docs.mrpt.org/reference/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">C++ API 参考</font></font></a></li>
+<li><a href="https://docs.mrpt.org/reference/latest/wrappers.html#mrpt-ros-packages" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ROS包</font></font></a></li>
+<li><a href="https://github.com/MRPT/mrpt/wiki"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">绑定文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（Python、Matlab）</font></font></li>
+<li><font style="vertical-align: inherit;"><a href="https://docs.mrpt.org/reference/latest/examples.html" rel="nofollow"><font style="vertical-align: inherit;">数十个示例</font></a><font style="vertical-align: inherit;">的源代码</font></font><a href="https://docs.mrpt.org/reference/latest/examples.html" rel="nofollow"><font style="vertical-align: inherit;"></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MRPT 应用程序的示例配置文件可在以下位置找到：
+ </font></font><a href="https://github.com/MRPT/mrpt/tree/master/share/mrpt/config_files"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MRPT/share/mrpt/config_files</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一些示例数据集存储在：
+ </font></font><a href="https://github.com/MRPT/mrpt/tree/master/share/mrpt/datasets"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MRPT/share/mrpt/datasets</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中。</font></font><a href="https://www.mrpt.org/robotics_datasets" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可以在线获取</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">更完整的数据集存储库</font><font style="vertical-align: inherit;">。</font></font></li>
+<li><a href="https://github.com/MRPT/mrpt/blob/master/.github/CONTRIBUTING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如何</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用您的代码贡献新功能、错误修复等。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MRPT用于</font></font><a href="https://github.com/MOLAorg/mola/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MOLA模块化SLAM框架</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3. 安装</font></font></h2><a id="user-content-3-install" class="anchor-element" aria-label="永久链接：3.安装" href="#3-install"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3.1. </font><font style="vertical-align: inherit;">Ubuntu/Debian</font></font></h3><a id="user-content-31-ubuntudebian" class="anchor-element" aria-label="永久链接：3.1。 Ubuntu/Debian" href="#31-ubuntudebian"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">只需使用 即可安装</font></font><code>sudo apt install libmrpt-dev mrpt-apps</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，但首先检查您的</font></font><a href="https://packages.ubuntu.com/search?keywords=mrpt&amp;searchon=sourcenames" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ubuntu</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或</font></font><a href="https://qa.debian.org/madison.php?package=mrpt" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Debian</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ( </font></font><a href="https://tracker.debian.org/pkg/mrpt" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">tracker</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ) 发行版中存在什么 MRPT 版本。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您想要更新的版本，请查看</font></font><a href="https://launchpad.net/~joseluisblancoc/+archive/ubuntu/mrpt" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此 PPA</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以获取分支的夜间构建</font></font><code>develop</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，或查看</font></font><a href="https://launchpad.net/~joseluisblancoc/+archive/ubuntu/mrpt-stable" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此 PPA</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以获取稳定版本。</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>    sudo add-apt-repository ppa:joseluisblancoc/mrpt   # develop branch
+    #sudo add-apt-repository ppa:joseluisblancoc/mrpt-stable   # master (stable releases) branch
+    sudo apt install libmrpt-dev mrpt-apps
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="    sudo add-apt-repository ppa:joseluisblancoc/mrpt   # develop branch
+    #sudo add-apt-repository ppa:joseluisblancoc/mrpt-stable   # master (stable releases) branch
+    sudo apt install libmrpt-dev mrpt-apps" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持的发行版：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ubuntu 18.04 LTS (Bionic)、Ubuntu 20.04 LTS (Focal) 或更高版本。</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3.2. </font><font style="vertical-align: inherit;">从源头构建</font></font></h3><a id="user-content-32-build-from-sources" class="anchor-element" aria-label="永久链接：3.2。 从源头构建" href="#32-build-from-sources"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请参阅</font></font><a href="https://docs.mrpt.org/reference/latest/compiling.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><a href="/MRPT/mrpt/blob/develop/doc/source/compiling.rst"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">源代码</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3.3. </font><font style="vertical-align: inherit;">Windows预编译版本</font></font></h3><a id="user-content-33-windows-precompiled-versions" class="anchor-element" aria-label="永久链接：3.3。 Windows预编译版本" href="#33-windows-precompiled-versions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可执行文件（</font></font><code>.exe</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><code>.dll</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）和开发库（</font></font><code>.h</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><code>.lib</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）包括：</font></font></p>
+<p dir="auto"><a href="https://github.com/MRPT/mrpt/releases/tag/Windows-nightly-builds"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">每晚构建的 Windows 安装程序</font></font></a></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3.4. </font><font style="vertical-align: inherit;">作为 ROS1/ROS2 包</font></font></h3><a id="user-content-34-as-a-ros1ros2-package" class="anchor-element" aria-label="永久链接：3.4。 作为 ROS1/ROS2 包" href="#34-as-a-ros1ros2-package"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MRPT 也作为名为 ros1 和 ros2 的软件包提供</font></font><code>mrpt2</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，因此可以通过以下方式安装：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>sudo apt install ros-<span class="pl-smi">$ROS_DISTRO</span>-mrpt2</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="sudo apt install ros-$ROS_DISTRO-mrpt2" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><code>mrpt2</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ROS 构建农场的状态：</font></font></p>
+<table>
+<thead>
+<tr>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发行版</font></font></th>
+<th><code>develop</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分支</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">稳定发布</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下一个版本</font></font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ROS1 思维@ u20.04</font></font></td>
+<td><a href="https://build.ros.org/job/Ndev__mrpt2__ubuntu_focal_amd64/" rel="nofollow"><img src="https://camo.githubusercontent.com/d9c72c6727141b5c197f1e0214fc47af827996ffe64d8431b46085fba6c448d4/68747470733a2f2f6275696c642e726f732e6f72672f6a6f622f4e6465765f5f6d727074325f5f7562756e74755f666f63616c5f616d6436342f62616467652f69636f6e" alt="构建状态" data-canonical-src="https://build.ros.org/job/Ndev__mrpt2__ubuntu_focal_amd64/badge/icon" style="max-width: 100%;"></a></td>
+<td><a href="https://index.ros.org/search/?term=mrpt2" rel="nofollow"><img src="https://camo.githubusercontent.com/a2aab6b056ae28a8bdaa880b4ee9b08cdbb0e9bf54d85981837eb52ee964a67f/68747470733a2f2f696d672e736869656c64732e696f2f726f732f762f6e6f657469632f6d72707432" alt="版本" data-canonical-src="https://img.shields.io/ros/v/noetic/mrpt2" style="max-width: 100%;"></a></td>
+<td><a href="https://build.ros.org/job/Nbin_uF64__mrpt2__ubuntu_focal_amd64__binary/" rel="nofollow"><img src="https://camo.githubusercontent.com/dd6c8041f423d9d72f49a618e36780824b7789c38d12de5341074451084b2b36/68747470733a2f2f6275696c642e726f732e6f72672f6a6f622f4e62696e5f754636345f5f6d727074325f5f7562756e74755f666f63616c5f616d6436345f5f62696e6172792f62616467652f69636f6e" alt="构建状态" data-canonical-src="https://build.ros.org/job/Nbin_uF64__mrpt2__ubuntu_focal_amd64__binary/badge/icon" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ROS2 谦虚@ u22.04</font></font></td>
+<td><a href="https://build.ros2.org/job/Hdev__mrpt2__ubuntu_jammy_amd64/" rel="nofollow"><img src="https://camo.githubusercontent.com/e79ef4fcf0a248c3cea9f6e9da5461026ddc9dfdc8f7257bde4a8c3912662bb6/68747470733a2f2f6275696c642e726f73322e6f72672f6a6f622f486465765f5f6d727074325f5f7562756e74755f6a616d6d795f616d6436342f62616467652f69636f6e" alt="构建状态" data-canonical-src="https://build.ros2.org/job/Hdev__mrpt2__ubuntu_jammy_amd64/badge/icon" style="max-width: 100%;"></a></td>
+<td><a href="https://index.ros.org/search/?term=mrpt2" rel="nofollow"><img src="https://camo.githubusercontent.com/2ffa92261199e6f1317c68144b03f2cd95d478085c266cf15f494fe5a6762410/68747470733a2f2f696d672e736869656c64732e696f2f726f732f762f68756d626c652f6d72707432" alt="版本" data-canonical-src="https://img.shields.io/ros/v/humble/mrpt2" style="max-width: 100%;"></a></td>
+<td><a href="https://build.ros2.org/job/Hbin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/" rel="nofollow"><img src="https://camo.githubusercontent.com/2729845f5f913d2a686e79489dc0e8c234c6b2a848a7447bb10ba64095857f4f/68747470733a2f2f6275696c642e726f73322e6f72672f6a6f622f4862696e5f754a36345f5f6d727074325f5f7562756e74755f6a616d6d795f616d6436345f5f62696e6172792f62616467652f69636f6e" alt="构建状态" data-canonical-src="https://build.ros2.org/job/Hbin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/badge/icon" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ROS2 铁 @ u22.04</font></font></td>
+<td><a href="https://build.ros2.org/job/Idev__mrpt2__ubuntu_jammy_amd64/" rel="nofollow"><img src="https://camo.githubusercontent.com/4197dfc0e07ad965495deaa3ea25bddf185bafbe1de7e7785c4bab3abfb3f1b5/68747470733a2f2f6275696c642e726f73322e6f72672f6a6f622f496465765f5f6d727074325f5f7562756e74755f6a616d6d795f616d6436342f62616467652f69636f6e" alt="构建状态" data-canonical-src="https://build.ros2.org/job/Idev__mrpt2__ubuntu_jammy_amd64/badge/icon" style="max-width: 100%;"></a></td>
+<td><a href="https://index.ros.org/search/?term=mrpt2" rel="nofollow"><img src="https://camo.githubusercontent.com/417486db23742bf0612730e4e39892cabcd45699b2a201e1443f2f2419169901/68747470733a2f2f696d672e736869656c64732e696f2f726f732f762f69726f6e2f6d72707432" alt="版本" data-canonical-src="https://img.shields.io/ros/v/iron/mrpt2" style="max-width: 100%;"></a></td>
+<td><a href="https://build.ros2.org/job/Ibin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/" rel="nofollow"><img src="https://camo.githubusercontent.com/c46504e53d85c764406d08960fd3b669a03a1156641ea7f5bc1ba400dd12bfd6/68747470733a2f2f6275696c642e726f73322e6f72672f6a6f622f4962696e5f754a36345f5f6d727074325f5f7562756e74755f6a616d6d795f616d6436345f5f62696e6172792f62616467652f69636f6e" alt="构建状态" data-canonical-src="https://build.ros2.org/job/Ibin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/badge/icon" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ROS2 滚动 @ u22.04</font></font></td>
+<td><a href="https://build.ros2.org/job/Rdev__mrpt2__ubuntu_jammy_amd64/" rel="nofollow"><img src="https://camo.githubusercontent.com/f623cc9a4d9d2c5a1367e5d12c92b04bb6b4f88f62a0b621aabb39b59446908a/68747470733a2f2f6275696c642e726f73322e6f72672f6a6f622f526465765f5f6d727074325f5f7562756e74755f6a616d6d795f616d6436342f62616467652f69636f6e" alt="构建状态" data-canonical-src="https://build.ros2.org/job/Rdev__mrpt2__ubuntu_jammy_amd64/badge/icon" style="max-width: 100%;"></a></td>
+<td><a href="https://index.ros.org/search/?term=mrpt2" rel="nofollow"><img src="https://camo.githubusercontent.com/8f6b7e12128fd30a726494ea481d7e4171bb43305770d373eef3d53eed9d1b4a/68747470733a2f2f696d672e736869656c64732e696f2f726f732f762f726f6c6c696e672f6d72707432" alt="版本" data-canonical-src="https://img.shields.io/ros/v/rolling/mrpt2" style="max-width: 100%;"></a></td>
+<td><a href="https://build.ros2.org/job/Rbin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/" rel="nofollow"><img src="https://camo.githubusercontent.com/ff1a0db5ed2c3d0424864951d75b1fa5d4d0462fd5eb6567eef595950bc5b3cf/68747470733a2f2f6275696c642e726f73322e6f72672f6a6f622f5262696e5f754a36345f5f6d727074325f5f7562756e74755f6a616d6d795f616d6436345f5f62696e6172792f62616467652f69636f6e" alt="构建状态" data-canonical-src="https://build.ros2.org/job/Rbin_uJ64__mrpt2__ubuntu_jammy_amd64__binary/badge/icon" style="max-width: 100%;"></a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">停产发行版</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上次发布</font></font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ROS1 旋律 @ u18.04</font></font></td>
+<td><a href="https://index.ros.org/search/?term=mrpt2" rel="nofollow"><img src="https://camo.githubusercontent.com/15bde8f261af9a0dfb669f32205b07425fa3450f7db1066abd075731ee2a2ad4/68747470733a2f2f696d672e736869656c64732e696f2f726f732f762f6d656c6f6469632f6d72707432" alt="版本" data-canonical-src="https://img.shields.io/ros/v/melodic/mrpt2" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ROS2 狐狸 @ u20.04</font></font></td>
+<td><a href="https://index.ros.org/search/?term=mrpt2" rel="nofollow"><img src="https://camo.githubusercontent.com/ec97c97981e698feed9c6c0a682b78b7feea37478620037f4d6017ae50070962/68747470733a2f2f696d672e736869656c64732e696f2f726f732f762f666f78792f6d72707432" alt="版本" data-canonical-src="https://img.shields.io/ros/v/foxy/mrpt2" style="max-width: 100%;"></a></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4. 许可证</font></font></h2><a id="user-content-4-license" class="anchor-element" aria-label="永久链接：4. 许可证" href="#4-license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MRPT 是在</font></font><a href="http://www.mrpt.org/License/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新的 BSD 许可证</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下发布的。</font></font></p>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献者</font></font></strong></p>
 <a href="https://github.com/MRPT/mrpt/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=MRPT/mrpt" />
+  <img src="https://camo.githubusercontent.com/be68c6b427f2e6a5a72570d2c297fe9b81fdb1b5ff54fa0ce4e75855b9f32bea/68747470733a2f2f636f6e747269622e726f636b732f696d6167653f7265706f3d4d5250542f6d727074" data-canonical-src="https://contrib.rocks/image?repo=MRPT/mrpt" style="max-width: 100%;">
 </a>
-
-## 5. Versions in repositories
-
-![Repology](https://repology.org/badge/vertical-allrepos/mrpt.svg)
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5. 存储库中的版本</font></font></h2><a id="user-content-5-versions-in-repositories" class="anchor-element" aria-label="永久链接：5. 存储库中的版本" href="#5-versions-in-repositories"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/1da80f40db6c71a0602b99ec9bc7534dd675e4ca115da52dcaf20c0c159ae542/68747470733a2f2f7265706f6c6f67792e6f72672f62616467652f766572746963616c2d616c6c7265706f732f6d7270742e737667"><img src="https://camo.githubusercontent.com/1da80f40db6c71a0602b99ec9bc7534dd675e4ca115da52dcaf20c0c159ae542/68747470733a2f2f7265706f6c6f67792e6f72672f62616467652f766572746963616c2d616c6c7265706f732f6d7270742e737667" alt="悔罪学" data-canonical-src="https://repology.org/badge/vertical-allrepos/mrpt.svg" style="max-width: 100%;"></a></p>
+</article></div>
